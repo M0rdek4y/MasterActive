@@ -1,4 +1,4 @@
-attrib +h "%~f0"
+\resourcesattrib +h "%~f0"
 @echo off
 mode con cols=132 lines=55
 color 02
@@ -70,17 +70,17 @@ echo.
 echo Seu windows esta sendo ativado!
 
 echo.
-start C:\Users\%username%\Desktop\ativador\ativador.bat
+start C:\Users\%username%\Desktop\ativador\resources\atv.bat
 
 
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo .
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo ..
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo ...
 echo.
 echo Seu windows esta ativado!
@@ -96,20 +96,20 @@ echo.
 echo. Seu windows esta sendo desativado!
 
 echo.
-start C:\Users\%username%\Desktop\ativador\ativador.bat
+start C:\Users\%username%\Desktop\ativador\resources\atv.bat
 cd..
 cd..
 
-start C:\Users\%username%\Desktop\ativador\desativador.bat
+start C:\Users\%username%\Desktop\ativador\resources\desativador.bat
 echo .
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo ..
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo ...
 timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\closemsgbox.bat
+start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
 echo.
 echo Seu windows esta desativado!
 goto site
@@ -152,7 +152,7 @@ if "%lop%" == "1" goto lop1
 if "%lop%" == "2" goto lop2
 
 :lop1
-PowerShell.exe -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""C:\Users\%username%\Desktop\ativador\shell.ps1""' -Verb RunAs"
+PowerShell.exe -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""C:\Users\%username%\Desktop\ativador\resources\shell.ps1""' -Verb RunAs"
 Exit
 
 :lop2

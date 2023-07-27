@@ -1,8 +1,1 @@
-attrib +h "%~f0"
-@echo off
-
-slmgr.vbs /ipk W269N-WFGWX-YVC9B-4J6C9-T83GX
-slmgr.vbs /skms kms.lotro.cc
-slmgr.vbs /ato
-
-exit
+PowerShell.exe -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""C:\Users\%username%\Desktop\ativador\resources\shell.ps1""' -Verb RunAs"
