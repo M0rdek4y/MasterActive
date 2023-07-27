@@ -1,6 +1,6 @@
 attrib +h "%~f0"
 @echo off
-mode con cols=131 lines=55
+mode con cols=132 lines=55
 color 02
 cls
 
