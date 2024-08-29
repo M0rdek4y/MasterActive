@@ -56,10 +56,12 @@ echo [1] Ativar windows
 echo [2] Desativar o windows
 echo [3] Sair sem fazer nada
 echo.
-set /p opcao="Digite o que deseja fazer..."
-if "%opcao%" == "1" goto op1
-if "%opcao%" == "2" goto op2
-if "%opcao%" == "3" goto op3
+choice /c 123 /n /m "Digite o que deseja fazer: "
+set "op=%errorlevel%"
+
+if "%errorlevel%" == "1" goto op1
+if "%errorlevel%" == "2" goto op2
+if "%errorlevel%" == "3" goto op3
 echo.
 
 :op1
@@ -70,20 +72,22 @@ echo.
 echo Seu windows esta sendo ativado!
 
 echo.
-start C:\Users\%username%\Desktop\ativador\resources\atv.bat
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\atv.bat
 
 
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo .
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo ..
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo ...
 echo.
 echo Seu windows esta ativado!
+echo.
+echo Confira a ativacao acessando "Configuracoes; Sistema; Sobre; Chave e Ativacao do Produto!"
 goto site
 
 :op2
@@ -96,20 +100,21 @@ echo.
 echo. Seu windows esta sendo desativado!
 
 echo.
-start C:\Users\%username%\Desktop\ativador\resources\atv.bat
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\atv.bat
 cd..
 cd..
 
-start C:\Users\%username%\Desktop\ativador\resources\desativador.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\desativador.bat
 echo .
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo ..
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo ...
-timeout /t 2 > nul
-start C:\Users\%username%\Desktop\ativador\resources\closemsgbox.bat
+timeout /t 3 > nul
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\closemsgbox.bat
 echo.
 echo Seu windows esta desativado!
 goto site
@@ -126,17 +131,24 @@ echo.
 echo.
 echo [1] Sim, parece divertido!
 echo [2] Nao, Obrigado!
-set /p web=:
+echo [3] Seu windows nao ativou, ative aqui!
+choice /c 123 /n /m ":"
+set "web=%errorlevel%"
+
 echo.
 echo.
-if "%web%" == "1" goto sim
-if "%web%" == "2" goto nao
+if "%errorlevel%" == "1" goto sim
+if "%errorlevel%" == "2" goto nao
+if "%errorlevel%" == "3" goto atvforce
 
 :sim
 start explorer https://github.com/M0rdek4y
 
 :nao
 goto fim
+
+:atvforce
+start %HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\assets\exec.bat
 
 
 :fim
@@ -147,12 +159,14 @@ echo.
 echo [1] Repetir o processo
 echo [2] Sair
 echo.
-set /p lop=Digite o que deseja fazer...
-if "%lop%" == "1" goto lop1
-if "%lop%" == "2" goto lop2
+choice /c 12 /n /m "O que deseja fazer..."
+set "lop=%errorlevel%"
+
+if "%errorlevel%" == "1" goto lop1
+if "%errorlevel%" == "2" goto lop2
 
 :lop1
-PowerShell.exe -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""C:\Users\%username%\Desktop\ativador\resources\shell.ps1""' -Verb RunAs"
+PowerShell.exe -ExecutionPolicy Bypass -Command "Start-Process PowerShell.exe -ArgumentList '-ExecutionPolicy Bypass -File ""%HOMEDRIVE%%HOMEPATH%\Desktop\ativador\resources\shell.ps1""' -Verb RunAs"
 Exit
 
 :lop2
