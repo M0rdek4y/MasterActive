@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MasterActive</title>
+    <style>
+        /* Global Styles */
+        * {
+            z-index: -1;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            z-index: 0;
+            background-color: #000000;
+            margin: 0 auto;
+            font-family: 'Raleway', sans-serif;
+            color: #fff;
+            text-align: center;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .centered-div {
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        background-color: #555;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        height: 500px;
+        width: 800px;
+        z-index: 1; /* adiciona uma camada acima do body */
+        }
+        /* configuração index text */
+        .indx {
+            max-width: 800px;
+            z-index: 2;
+        }
+
+        /* Title Styles */
+        #title {
+            font-size: 48px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.5);
+            border-bottom: 2px solid #fff;
+            padding-bottom: 10px;
+        }
+
+        /* App Description Styles */
+        #app-description {
+            font-size: 20px;
+            color: #ccc;
+            margin-bottom: 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: bold;
+            text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Download Button Styles */
+        #download-btn {
+            background-color: #6c5ce7;
+            color: #ffffff;
+            padding: 10px 20px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.7s ease-in-out, border-color 0.7s ease-in-out, color 0.7s ease-in-out, transform 0.2s ease-in-out;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            /* border */
+            top: 20px;
+            border-style: solid !important;
+            border-color: #780514 !important;
+            border-radius: 10px !important;
+            border-width: 2px !important;
+        }
+        
+        #download-btn:hover {
+            transform: scale(1.1);
+            background-color: #8e44ad;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            border-color: #ffffff !important;
+            border-style: solid;
+            border-radius: 10px;
+            border-width: 2px;
+            color: #1c1c1c;
+        }
+
+        /* Legal Text Styles */
+        #legal-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 10px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Credit Text Styles */
+        #credit-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 5px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #credit-text a {
+            text-decoration: none;
+            color: #666;
+            margin-left: 5px;
+        }
+
+        #credit-text a:hover {
+            text-decoration: underline;
+            color: #999;
+        }
+
+        #credit-icon {
+            font-size: 16px;
+            color: #666;
+        }
+
+        #credit-text center {
+            font-family: 'Open Sans', sans-serif;
+            color: #444;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                margin: 20px;
+            }
+
+            #app-description {
+                font-size: 18px;
+            }
+
+            #download-btn {
+                padding: 8px 15px;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                margin: 10px;
+            }
+
+            #app-description {
+                font-size: 16px;
+            }
+
+            #download-btn {
+                padding: 6px 10px;
+            }
+
+            #credit-text {
+                font-size: 10px;
+            }
+        }
+
+        /* new styles */
+        #legal-text {
+            margin-top: 20px;
+        }
+
+        #credit-text {
+            margin-top: 10px;
+        }
+
+        #credit-icon {
+            font-size: 16px;
+            color: #666;
+        }
+
+        #credit-text span {
+            font-size: 10px;
+            color: #555;
+            font-family: 'Arial', sans-serif;
+        }
+
+        #credit-text a {
+            color: #7A288A;
+        }
+
+        #credit-text center span {
+            font-size: 10px;
+            color: #555;
+            font-family: 'Arial', sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container" class="centered-div"></div>
+    <span class="indx">
+        <h1 id="title">MasterActive</h1>
+        <p id="app-description">O Windows Activator é um aplicativo fácil de usar que ajuda a ativar sua cópia do Windows
+            sem a necessidade de uma chave de produto. Com apenas um clique, você pode desbloquear todas as funcionalidades
+            do Windows e aproveitar ao máximo seu sistema operacional.</p>
+        <a href="https://github.com/M0rdek4y/MasterActive/raw/main/ActiveInstall.exe" id="download-btn">Baixar Agora</a>
+        <p id="legal-text">Ao baixar, você concorda com os termos e condições de uso.</p>
+        <p id="credit-text">
+            <i id="credit-icon" class="fas fa-copyright"></i>
+            <span>Desenvolvido por <a href="https://github.com/M0rdek4y" target="_blank">M0rdek4y</a></span><br>
+            <span>Todos os direitos reservados.</span>
+    </span>
+        </div>
+    </p>
+</body>
+
+</html>
