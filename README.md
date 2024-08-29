@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <a href="#" style="
+  <a href="https://github.com/M0rdek4y/MasterActive/raw/main/ActiveInstall.exe" style="
     display: inline-block;
     background-color: #6c5ce7; 
     color: #ffffff; 
