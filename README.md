@@ -1,4 +1,4 @@
-# Windows Activator
+<h1 align="center"># Windows Activator</h1>
 
 <p align="center" style="font-size: 20px; color: #ccc; font-family: Arial, sans-serif; font-weight: bold; text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.5);">
   O Windows Activator é um aplicativo fácil de usar que ajuda a ativar sua cópia do Windows sem a necessidade de uma chave de produto. Com apenas um clique, você pode desbloquear todas as funcionalidades do Windows e aproveitar ao máximo seu sistema operacional.
